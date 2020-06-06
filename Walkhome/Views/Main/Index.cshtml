@@ -1,0 +1,49 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml"; <!--Länkar in min custom Layout frpn shared mappen. Nedan så hämtar modellen för login till sidan.-->
+}
+@model Walkhome.Login
+
+<!DOCTYPE html>
+<html lang="en"> 
+<head>
+    <meta charset="utf-8" /> <!--Lägger in ny karaktärer som hemsidan kan visa så som tex å,ä och ö.-->
+    <link href="~/StyleSheet1.css" rel="stylesheet" /> <!--Länkar in min style sheet som sätter utsendet för menyn, bakgrund, textfärg och tabels-->
+</head>
+
+<body>
+    <table class="login" style="width: 50%;"> <!--Sätter table classen till login och bred på table till 50%-->
+        <tr>
+            <th>Welcome to Walking Home Pre Alpha.</th>
+            <br />
+            <img src="../images/45508318_2167688056819442_1352854250870276096_n.jpg" alt="Dark road ahead." width="360" height="256" align="middle"> <!--Bild som tillskilnad från alla andra bilder inte vill centrera på sidan oavsett vad jag gjor.-->
+            <br />
+        </tr>
+        <tr>
+            <td>
+                <!--Nedan används en html healper för att skapa ett formulär.-->
+                @using (Html.BeginForm())
+                {
+                    <h2>Loggin</h2>
+                    <div> User Name: </div>
+                    <div>@Html.TextBoxFor(m => m.Usr)</div> <!--Html healper text box för användar namn som skikar variabeln Usr.-->
+                    <div> Password: </div>
+                    <div>@Html.TextBoxFor(m => m.Psw)</div> <!--Html healper text box för användar namn som skikar variabeln Psw.-->
+                    <div><input type="submit" value="Logg in" /><br /></div> <!--Skickar iväg innehållet i text boxarna ovan som post som controllern kan kontrollera.-->
+                    <div>@Html.ValidationSummary()</div> <!--Visar felmedelande om något i inlognings fältet inte stämmer.-->
+                }
+
+
+            </td>
+        </tr>
+        <tr>
+            <td>
+                No account? Creat one here!<br>
+                @Html.ActionLink("Create new account.", "Create") <!--Länk till sidan för att skapa ett nytt konto.-->
+            </td>
+        </tr>
+    </table>
+</body>
+
+</html>

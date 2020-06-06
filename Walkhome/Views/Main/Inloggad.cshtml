@@ -1,0 +1,51 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model List<Walkhome.Login>
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <br>
+    <table>
+        <thead>
+            <tr>
+                <th>
+                    Registrerade användare!
+                </th>
+            </tr>
+        </thead>
+        <!--For each loop nedan som skriver ut alla användare i data basen som en lista.-->
+        <ul>
+        @foreach (var item in Model)
+        {
+         
+              <li>@Html.DisplayFor(modelItem => item.Usr)</li>
+            
+        }
+            </ul>
+    </table>
+    <table class="login" style="width: 50%;">
+        <tr>
+            <td>
+                <img src="../images/20191105_225230.jpg" alt="Outsid school." width="720" height="512" usemap="#roads"> <!--Bild som använder usemap för att skapa länkar vidare.-->
+                <map name="roads">
+                    <area shape="rect" coords="0,100,200,400" href="#" alt="Left road.">
+                    <area shape="rect" coords="350,100,720,300" href="ToCentrum" alt="Right road."> <!--Sätter ut cordinaterna för ett område på bilden som länkar till ToCentrum.-->
+                </map>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                You have spent all day working on an assigment in school, now its time to go home and get some sleep.<br>
+                But you are fealing peckish. Do you go and get something to eat (the roadto the right(only working one for now)) or do you go home? (the road to the left) <br>
+                Click on the road you wish to follow.
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

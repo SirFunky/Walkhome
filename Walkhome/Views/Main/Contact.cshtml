@@ -1,0 +1,38 @@
+﻿
+@{
+    ViewBag.Title = "Contact";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <table class="login" style="width: 50%;">
+        <tr>
+            <td>
+                <form action="mailto:shadowblade83@hotmail.com" enctype="text/plain" method="get">
+                    <!--Sätter action som sker när man klickar på knappen send med metoden get.-->
+                    Title:<br> <input id="id1" type="text" name="subject" required><br><br> <!--Text fält för titeln som skall skikas med till email klienten.-->
+                    Message:<br> <textarea name="body"></textarea><br> <!--Text fält för medelandet som skall skikas med till email klienten.-->
+                    <input type="submit" value="Send" onclick="myFunction()"> <!--Knapp som kör java scriptet myFunction och skikar med resultatet till email klienten om valid.-->
+
+                    <p id="check"></p> <!--Skriver ut om scriptet fungerar eller inte.-->
+                    <!--Nedan java script för att kontrollera att fälten är ifyllda.-->
+                    <script>
+                        function myFunction() {
+                            var inpObj = document.getElementById("id1");
+                            if (!inpObj.checkValidity()) {
+                                document.getElementById("check").innerHTML = inpObj.validationMessage;
+                            } else {
+                                document.getElementById("check").innerHTML = "Input OK"; 
+                            }
+                        }
+                    </script>
+                </form>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>
+

@@ -1,0 +1,39 @@
+﻿
+@{
+    ViewBag.Title = "FastFood";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<html>
+<head>
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+    <!--Nedan länkar in Jquery lib från googles api.-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <!--Nedan script som skapar en alert ruta när man klickar på P elementet.-->
+    <script>
+        $(document).ready(function () {
+            $("p").click(function () {
+                alert("You have come to the end of the Walking Home pre alpha, hope you had a good time. The rest will come in good time stay tuned.");
+            });
+        });
+    </script>
+</head>
+<body>
+    <table class="login" style="width: 50%;">
+        <tr>
+            <td>
+                <img src="../images/FastFood.jpg" alt="Starting to walk towards centrum." width="720" height="512" usemap="#interactive">
+                <map name="interactive">
+                    <area shape="rect" coords="200,200,600,400" href="FastFood" alt="Left road.">
+                </map>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                Waith what! Nobody inside and its locked whats going on here it shouldnt be closed yet!<br>
+                Well nothing to be done about it lets head home!<br>
+                <p>Click Here!</p>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

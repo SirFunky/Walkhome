@@ -1,0 +1,53 @@
+﻿
+
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model Walkhome.Login
+<!DOCTYPE html>
+
+<html>
+<head>
+    <link href="~/StyleSheet1.css" rel="stylesheet" />
+</head>
+<body>
+    <div>
+
+
+        <table class="login" style="width: 50%;">
+            <tr>
+                <th>Sign Up</th>
+            </tr>
+            <tr>
+                <td>
+                    <p>Please fill this form to create an account.</p>
+                    <!--Nedan är ett formulär skapat med html healper som postar användarnamn och lösenord som du angett.-->
+                    @using (Html.BeginForm())
+                    {
+                        <div>
+                            User name: <br />
+                            @Html.EditorFor(model => model.Usr)
+                            <br />
+                            Password: <br />
+                            @Html.EditorFor(model => model.Psw)
+                            <br />
+                            <input type="submit" value="Skapa" />
+                        </div>
+                    }
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <p>
+                        Already have an account?<br>
+                        @Html.ActionLink("Login here.", "Index")
+                    </p>
+                </td>
+            </tr>
+            <tr>
+                <td>Här skall det stå något kanske?</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
